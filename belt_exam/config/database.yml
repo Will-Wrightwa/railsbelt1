@@ -1,0 +1,22 @@
+
+#
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres 
+  password: root
+  pool: 5
+
+development:
+  <<: *default
+  database: belt_exam_development
+
+test:
+  <<: *default
+  database: belt_exam_test
+
+production:
+  <<: *default
+  database: belt_exam_production
+  username: belt_exam
+  password: <%= ENV['BELT_EXAM_DATABASE_PASSWORD'] %>
