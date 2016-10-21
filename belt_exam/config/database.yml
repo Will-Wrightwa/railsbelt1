@@ -3,7 +3,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username:
+  username: ubuntu
   pool: 5
 
 development:
@@ -17,5 +17,4 @@ test:
 production:
   <<: *default
   database: belt_exam_production
-  username: ubuntu
   password: <%= ENV['BELT_EXAM_DATABASE_PASSWORD'] %>
